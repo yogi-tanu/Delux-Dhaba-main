@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Food to Firebase</title>
+  <style>body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  </style>
+</head>
+<body>
+  <h2>Veg Food</h2>
+  <form id="vegFoodForm">
+    <label for="vegName">Name:</label>
+    <input type="text" id="vegName" name="vegName" required><br><br>
+    <!-- <label for="vegDescription">Description:</label>
+    <input type="text" id="vegDescription" name="vegDescription" required><br><br>
+    <label for="vegImage">Image URL:</label>
+    <input type="file" id="vegImage" name="vegImage" required><br><br> -->
+    <label for="vegPrice">Price:</label>
+    <input type="text" id="vegPrice" name="vegPrice" required><br><br>
+    <button type="submit">Add Veg Food</button>
+  </form>
+
+  <h2>Non-Veg Food</h2>
+  <form id="nonVegFoodForm">
+    <label for="nonVegName">Name:</label>
+    <input type="text" id="nonVegName" name="nonVegName" required><br><br>
+    <!-- <label for="nonVegDescription">Description:</label>
+    <input type="text" id="nonVegDescription" name="nonVegDescription" required><br><br>
+    <label for="nonVegImage">Image URL:</label>
+    <input type="text" id="nonVegImage" name="nonVegImage" required><br><br> -->
+    <label for="nonVegPrice">Price:</label>
+    <input type="text" id="nonVegPrice" name="nonVegPrice" required><br><br>
+    <button type="submit">Add Non-Veg Food</button>
+  </form>
+<script type="module">
+  
+      import { getDatabase, ref, set } from './config.js';
+  
+
+  document.getElementById('vegFoodForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const storage = getStorage();
+
+  const name = document.getElementById('vegName').value;
+  // const file = document.getElementById('vegImage').files[0]; // Get the file
+  // const storageReff = storageRef(storage, file.name);
+  writeUserData(name, price, 'Veg');
+
+  // Clear form inputs
+  document.getElementById('vegName').value = '';
+  // document.getElementById('vegDescription').value = '';
+  // document.getElementById('vegImage').value = '';
+  document.getElementById('vegPrice').value = '';
+});
+
+document.getElementById('nonVegFoodForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+
+  writeUserData(name, description, image, price, 'Non-Veg');
+
+  // Clear form inputs
+  document.getElementById('nonVegName').value = '';
+
+  document.getElementById('nonVegPrice').value = '';
+});
+
+</script>
+
+
+
+
+
+
+
+  <!-- <script type="module">
+    import { getDatabase, ref, set } from './config.js';
+
+document.getElementById('foodForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const description = document.getElementById('description').value;
+  const image = document.getElementById('image').value;
+  const price = document.getElementById('price').value;
+
+  writeUserData(name, description, image, price);
+
+  // Clear form inputs
+  document.getElementById('name').value = '';
+  document.getElementById('description').value = '';
+  document.getElementById('image').value = '';
+  document.getElementById('price').value = '';
+});
+
+function writeUserData(name, description, image, price) {
+  const db = getDatabase();
+  set(ref(db, 'Food/Veg/' + Date.now()), {
+    name: name,
+    description: description,
+    image: image,
+    price: price
+  }).then(() => {
+    console.log('Data added to Firebase successfully!');
+  }).catch((error) => {
+    console.error('Error adding data to Firebase: ', error);
+  });
+}
+function nonveg(name, description, image, price) {
+  const db = getDatabase();
+  set(ref(db, 'Food/nonVeg/' + Date.now()), {
+    name: name,
+    description: description,
+    image: image,
+    price: price
+  }).then(() => {
+    console.log('Data added to Firebase successfully!');
+  }).catch((error) => {
+    console.error('Error adding data to Firebase: ', error);
+  });
+}
+
+</script> -->
+</body>
+</html>

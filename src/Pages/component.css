@@ -1,0 +1,52 @@
+.containerbox {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 80%;
+    justify-content: center; /* Center items horizontally */
+  }
+  
+  
+.icon {
+    flex: 1 1 20%; /* Adjust the percentage as needed */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center;
+    margin: 1vh;
+    padding: 19px;
+    border-radius: 25px 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;    
+  }
+  .icon p {
+    width: 15vw;
+  }
+  .icon h2 {
+color: inherit;  }
+
+  .icon:hover {
+
+    transform: translateY(10px); 
+  background-color: var(--first-color-alt);
+  color: white;
+ 
+  }
+  
+  .icon img {
+    width: 50px; /* Adjust the size of the icons */
+    margin-bottom: 10px; /* Add space below the image */
+  }
+  
+  @media (max-width: 768px) {
+    .containerbox {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items vertically */
+    }
+    .icon p {
+      width: 70vw;
+    }
+    .icon {
+      flex-basis: auto; /* Take full width */
+    }
+  }
+  

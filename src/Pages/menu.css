@@ -1,0 +1,116 @@
+.menu {
+    display: flex;
+    width: 80vw;
+    margin: auto;
+  }
+  
+  .menu-item {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .menu-item-1 {
+    width: 20vw;
+    background-color: #000000;
+    background-image: url('../backgound.jfif'); /* Replace 'your-background-image.jpg' with the path to your background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .menu-item-2,
+  .menu-item-3 {
+    width: 30vw;
+  }
+  .menu-item-4 {
+    width: 20vw;
+    background-color: #000000;
+    background-image: url('../backgound.jfif'); /* Replace 'your-background-image.jpg' with the path to your background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  /* Food list  */
+
+  .food-list {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+  }
+  
+  .food-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .food-icon {
+    height: 10vh; /* Height of the column of details */
+    margin-right: 10px;
+  }
+  
+  .food-details {
+    text-align: left;
+    flex: 1;
+  }
+  
+  .food-name {
+    margin: 0;
+  }
+  
+  .food-price {
+    margin: 0;
+    font-weight: bold;
+  }
+  .menu-item-1 {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+
+    }
+    .menu-item-4 {
+      border-top-right-radius: 40px;
+      border-bottom-right-radius: 40px;
+  
+      }
+  @media (max-width: 768px) {
+    .menu {
+      flex-direction: column;
+    }
+  
+    .menu-item-1 {
+      display: none; /* Hide the first menu item on mobile */
+    }
+    .menu-item-4 {
+      display: none; /* Hide the first menu item on mobile */
+    }
+  
+    .menu-item-2,
+    .menu-item-3 {
+      width: 80vw; /* Adjust the width for mobile */
+    }
+    .food-list {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+      }
+  }
+  
+
+  /* button  */
+  .button1 {
+    display: inline-block;
+    padding: 1vh 20px;
+    background: linear-gradient(to bottom, #000 50%,  var(--first-color) 50%);
+    background-size: 100% 200%;
+    background-position: top left;
+    transition: background-position 0.5s ease-out;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid  var(--first-color);
+    border-radius: none;
+}
+
+.button1:hover {
+    background-position: bottom left;
+}

@@ -1,0 +1,116 @@
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(19, 100%, 96%); /* Change the background color as needed */
+    z-index: 9999; /* Make sure the preloader appears on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid hsl(19, 64%, 54%);; /* Initial border with transparency */
+  /* border-radius: 10px; Border radius */
+  overflow: hidden;
+  }
+  .preloader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff5733, transparent); /* Gradient border */
+    border-radius: 10px; /* Match the parent's border radius */
+    animation: pulse 2s ease infinite alternate; /* Apply pulsating animation */
+  }
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    to {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+  
+  .logo {
+    transform: scale(0); /* Start with logo scaled down */
+    animation: scaleIn 1s ease forwards; /* Scale-in animation */
+    height: 200px;
+    width: 200px;
+  }
+  
+  @keyframes scaleIn {
+    from {
+      transform: scale(0); /* Start with scale 0 */
+    }
+    to {
+      transform: scale(1); /* End with normal scale */
+    }
+  }
+  .text1 {
+    font-family: 'Roboto', sans-serif; /* Use a Google Font or any other preferred font */
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+    color : #333; /* Dark text color to contrast with the light background */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Add spacing between letters for a stylish look */
+    animation: glow 2s ease infinite alternate; /* Apply glowing animation */
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff5733, 0 0 70px #ff5733, 0 0 80px #ff5733, 0 0 100px #ff5733, 0 0 150px #ff5733;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff5733, 0 0 40px #ff5733, 0 0 70px #ff5733, 0 0 80px #ff5733, 0 0 100px #ff5733, 0 0 150px #ff5733, 0 0 200px #ff5733;
+    }
+  }
+  @keyframes borderGlow {
+    from {
+      border-color: transparent;
+      box-shadow: 0 0 10px 0px #ff5733; /* Apply shadow with color */
+    }
+    to {
+      border-color: #ff5733; /* Change border color to desired color */
+      box-shadow: 0 0 20px 0px #ff5733; /* Increase shadow size */
+    }
+  }
+
+  /*@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+  .bigdiv{
+    background-color: hsl(19, 24%, 85%);
+    overflow: hidden; 
+  }
+  .h1{
+    position:relative;
+    margin: 0 auto;
+    top: 90vh;
+    width: 100vw;
+    text-align: center;
+     font-family: 'Animatic SC'; 
+     font-size: 6vh;
+     Color : #333 ; 
+     opacity: .75;
+    animation: pulse 2.5s linear infinite;
+  }
+
+ .bubble{
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: 0 0 0.25vh #4d4d4d;
+    opacity:0;
+  }
+
+   .bubble:nth-child(1){
+    margin-top: 2.5vh;
+    left: 58%;
+    width: 2.5vh;
+    height: 2.5vh;
+    background-color: #454545;
+    animation: bubble 2s cubic-bezier(0.53,0.16,0.39,0.96);
+  }*/
