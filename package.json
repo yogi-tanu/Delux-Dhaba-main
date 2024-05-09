@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "homepage": "https://yogi-tanu.github.io/Delux-Dhaba-main/",
-  "predeploy": "npm run build",
+  "predeploy": "npm run dev",
   "deploy": "gh-pages -d build",
     "dev": "vite --host",
     "build": "vite build",
